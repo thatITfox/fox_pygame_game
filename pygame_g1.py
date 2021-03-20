@@ -70,8 +70,7 @@ while running:
                 playerX_change = 0
     # load in the background image to screen
     layar.blit(background_img, [0, 0])
-    # the code below in order to change its x location
-    playerX += playerX_change
+    
     # code below so that the player does not come out of the screen
     if playerX <= 0:
         playerX = 0
@@ -83,17 +82,13 @@ while running:
         berryX = randint(5, 731)
     else:
         berryY += 0.1
-    # the bottom of this comment is for the feature for the score
-    score_det_change = score
+   
     # collision for fox and berry
     if iscollision(berryX, berryY, playerX, playerY):
         score += 1
+        print(score)
         berryY = 0
         berryX = randint(5, 731)
-    # print the score if the score is updated
-    if score_det_change < score:
-        score_det_change += 1
-        print(int(score_det_change))
     blueberry(berryX, berryY)
     player(playerX, playerY)
     # character(blueberryimg, berryX, berryY)
